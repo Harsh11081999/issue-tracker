@@ -1,0 +1,28 @@
+<h1>Create an Issue for the Project Title</h1>
+<h3>
+    <%= data.projectName %>
+</h3>
+
+<form action="/issue/create" method="post">
+    <div class="mb-3">
+        <label for="Title" class="form-label">Title</label>
+        <input type="text" class="form-control" id="title" placeholder="Enter Project Title Here">
+    </div>
+    <div class="mb-3">
+    <label for="desc" class="form-label">Description</label>
+        <textarea class="form-control" id="desc" rows="3"></textarea>
+    </div>
+    <select class="form-select" aria-label="Default select example" id="selectBox" onchange="selectlabel()">
+        <option selected>Open this select menu</option>
+        <option value="1">Reference Error</option>
+        <option value="2">Syntax Error</option>
+        <option value="3">Type Error</option>
+        <option value="4">Other Error's</option>
+      </select>
+    <div class="mb-3">
+        <label for="Author" class="form-label">Author</label>
+        <input type="text" class="form-control" id="author" placeholder="Enter Author's Name">
+    </div>
+    <button type="submit"  value="enter the project issues" class="btn btn-success">Submit</button>
+</form>
+

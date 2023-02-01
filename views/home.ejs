@@ -1,0 +1,30 @@
+<button type="button" class="btn btn-outline-success"><a href="/project/create_project">Create New Project</a></button>
+
+<div id="container">
+
+
+  <table class="table table-success table-striped">
+    <thead>
+      <tr>
+
+        <th scope="col">List of Projects</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for(p of all_projects){%>
+        <tr>
+
+          <td> <a href="/issue/project_detail/<%= p.id %>">
+              <%= p.projectName %>
+            </a> </td>
+          <td><button type="button" class="btn btn-info"><a href="/project/update_project">Edit &nbsp; <i
+                  class="fa-solid fa-pen-to-square"></i></a></button></td>
+          <td><button type="button" class="btn btn-danger"><a href="/project/destroy/<%= p.id%>">Delete &nbsp;<i
+                  class="fa-solid fa-trash"></i></a></button></td>
+        </tr>
+        <% } %>
+    </tbody>
+  </table>
+</div>

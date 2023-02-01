@@ -1,0 +1,84 @@
+<button method="type" ="button" class="btn btn-outline-success">
+  <a href="/issue/create_issue/<%= project_detail._id %>"> Create Issue</a>
+</button>
+
+<div id="container">
+  <table class="table table-success table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Name of Projects</th>
+        <th scope="col">Desciption</th>
+        <th scope="col">Author</th>
+        <th scope="col">Bugs</th>
+      </tr>
+    </thead>
+    <tbody>
+      <th scope="col"><%= project_detail.projectName %></th>
+      <th scope="col"><%= project_detail.description %></th>
+      <th scope="col"><%= project_detail.author %></th>
+
+      <th>
+        <!-- <% for(list of all_issue){%> <% for(l of list.label){%>
+        <p><%= l %></p>
+        <% }%> <% } %> -->
+        <% for(list of lableofProjectDet){%> <%= list %> ,<% } %>
+      </th>
+    </tbody>
+  </table>
+
+  <form action="/create/filter" method="post">
+    <% for(let i of issue){ %>
+    <div class="form-check form-check-inline">
+      <input
+        class="form-check-input"
+        name="label"
+        type="checkbox"
+        id="inlineCheckbox1"
+        value="<%= i %>"
+      />
+      <label class="form-check-label" for="inlineCheckbox1"><%= i %></label>
+    </div>
+    <% } %>
+
+    <br />
+    <br />
+    <!-- <div class="btn-group dropend">
+        <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          Dropright
+        </button>
+        <ul class="dropdown-menu">
+         
+        </ul>
+      </div> -->
+
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label"
+        >Project Name</label
+      >
+      <input
+        name="projectName"
+        type="text"
+        class="form-control"
+        id="exampleFormControlInput1"
+        placeholder="Search By Name"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label"
+        >Project Description</label
+      >
+      <textarea
+        name="description"
+        class="form-control"
+        id="exampleFormControlTextarea1"
+        rows="2"
+      ></textarea>
+    </div>
+    <div class="d-grid gap-2">
+      <button class="btn btn-primary" type="submit">Search</button>
+    </div>
+  </form>
+
+  <br />
+  <br />
+</div>

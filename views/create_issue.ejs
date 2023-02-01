@@ -1,0 +1,45 @@
+<h1>Create an Issue for the Projec</h1>
+
+<form action="/issue/create" method="post">
+  <div class="mb-3">
+    <label for="Title" class="form-label">Title</label>
+    <input
+      type="text"
+      name="Title"
+      class="form-control"
+      id="title"
+      placeholder="Enter Project Title Here"
+    />
+    <input type="hidden" name="projectRef" value="<%= projectRef %>" />
+  </div>
+  <div class="mb-3">
+    <label for="desc" class="form-label">Description</label>
+    <textarea name="Desc" class="form-control" id="desc" rows="3"></textarea>
+  </div>
+  <select
+    name="label"
+    class="form-select"
+    aria-label="Default select example"
+    id="selectBox"
+    onchange="selectlabel()"
+  >
+    <option selected>Compilation Error</option>
+    <option value="Bug">Bug</option>
+    <option value="Duplicate">Duplicate</option>
+    <option value="Invalid">Invalid</option>
+    <option value="Question">Question</option>
+    <option value="Help Wanted">Help Wanted</option>
+    <option value="UI Not Good">UI Not Good</option>
+  </select>
+  <div class="mb-3">
+    <label for="Author" class="form-label">Author</label>
+    <input
+      name="author"
+      type="text"
+      class="form-control"
+      id="author"
+      placeholder="Enter Author's Name"
+    />
+  </div>
+  <button type="submit" class="btn btn-success">Submit</button>
+</form>
